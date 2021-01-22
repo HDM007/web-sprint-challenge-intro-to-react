@@ -8,13 +8,13 @@ const Wrapper = styled.div`
 `;
 
 function Character(props) {
-    const { item } = props
+    const { character } = props
 
     return (
         <Wrapper>
-            <p>Name:{item.name}</p>
-            <p>Height: {item.height}</p>
-            <p>Birth Year: {item.birth_year}</p>
+            <p>Name:{character.name}</p>
+            <p>Height: {character.height}</p>
+            <p>Birth Year: {character.birth_year}</p>
         </Wrapper>
     )
 }

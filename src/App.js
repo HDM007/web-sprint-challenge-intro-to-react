@@ -5,12 +5,12 @@ import Character from "./components/Character"
 import styled from 'styled-components'
 
 const App = () => {
-  const [charInfo, setCharInfo] = useState([])
+  const [characterInfo, setCharacterInfo] = useState([])
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
   useEffect( () => {
     axios.get("https://swapi.dev/api/people/").then((res) =>{
-      setCharInfo(res.data.results)
+      setCharacterInfo(res.data.results)
     }).catch((res) =>{
       console.log(res)
     })},[])
@@ -21,8 +21,8 @@ const App = () => {
 
   return (
     <div className="App">
-      {charInfo.map((item, index) => {
-        return <Character item={item} key={index} />
+      {characterInfo.map((character, index) => {
+        return <Character item={character} key={index} />
       })}
     </div>
   );
